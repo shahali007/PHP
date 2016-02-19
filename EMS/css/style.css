@@ -1,0 +1,101 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300);
+*{
+    margin: 0;
+    padding: 0;
+}
+a,
+a:hover,
+a:focus,
+a:active{
+    color: #000;
+    text-decoration: none;
+    outline: none;
+    transition: all 0.3s;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{
+    margin-bottom: 15px;
+}
+body{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    margin-top:80px;
+}
+.margin25pxT{
+    margin-top:25px;
+    margin-bottom:25px;
+}
+/*================| header css |================*/
+header{}
+header .navbar{
+    width: 100%;
+    padding: 15px 0;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.3);
+    margin: 0;
+    z-index: 1;
+    background: #fff;
+}
+header .navbar-brand{
+    color: #3DB4D7;
+    font-size: 24px;
+    border: 1px solid;
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-left:15px;
+}
+header .nav{}
+header .nav li{}
+header .nav li a{
+    text-transform: uppercase;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 16px;
+}
+header .nav li a:hover,
+header .nav li a:active,
+header .nav li a:focus{
+    background: #fff;
+    color: #3DB4D7;
+}
+
+
+/*================| slider css |================*/
+#EMS-carousel{
+    margin-bottom:25px;
+}
+#EMS-carousel .carousel-inner{}
+#EMS-carousel .carousel-inner .item{
+    background-size: 100% 100%;
+    background-position: center;
+    width:100%;
+    padding:120px 0;
+    height:auto;
+}
+#EMS-carousel .carousel-inner .item .slider-info{
+    padding: 25px;
+    background:rgba(0,0,0,0.3);
+    margin:30px;
+    color: #fff;
+    box-shadow: -10px 10px 0 1px rgba(0,0,0,0.7);
+}
+#EMS-carousel .carousel-inner .item h2{}
+#EMS-carousel .carousel-inner .item p{
+    font-size: 18px;
+    font-weight: 100;
+}
+#EMS-carousel .carousel-inner .item a{}
+
+
+/*================| footer css |================*/
+footer{
+    margin-top:25px;
+}
+footer p{}
+footer a{
+    color: #3DB4D7;
+}
