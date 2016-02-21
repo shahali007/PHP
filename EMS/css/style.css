@@ -43,13 +43,16 @@ header .navbar{
 header .navbar-brand{
     color: #3DB4D7;
     font-size: 24px;
-    border: 1px solid;
+    /*border: 1px solid;*/
     padding-right: 25px;
-    padding-left: 25px;
+    /*padding-left: 25px;*/
     margin-left:15px;
 }
 header .nav{}
 header .nav li{}
+header .nav li.active a{
+    color: #3DB4D7;
+}
 header .nav li a{
     text-transform: uppercase;
     padding-right: 15px;
@@ -98,4 +101,78 @@ footer{
 footer p{}
 footer a{
     color: #3DB4D7;
+}
+
+/*========================================================/
+\==================| team_area css |======================\
+/========================================================*/
+.button-style {
+    background: #1A3874;
+    display: inline-block;
+    padding: 10px;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 3px 3px 0 3px;
+    width: 150px;
+    position: relative;
+    text-align: center;
+}
+.button-style::before{
+    position: absolute;
+    border-color: transparent transparent transparent #1A3874;
+    border-style: solid;
+    border-width: 10px 0 0 15px;
+    content: '';
+    right: -15px;
+    bottom: 0;
+}
+a.button-style:hover{
+    color: #63BEEA;
+}
+#team_area{}
+#team_area .team{
+    background: #f6f6f6;
+    transition: all 0.3s;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2);
+    margin-bottom:30px;
+}
+#team_area .team:hover{
+    background: #121733;
+    color: #fff;
+}
+#team_area .team .img{
+    background: url(../images/imgaa.jpeg);
+    background-size: cover;
+    height:140px;
+    position: relative;
+}
+#team_area .team .img img{
+    width: 130px;
+    height: 130px;
+    box-shadow: 0 0 25px 0 #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%);
+    border-radius: 100%;
+    border: 5px solid #fff;
+}
+#team_area .team-info{
+    padding:90px 25px 35px;
+}
+#team_area .team-info h4 a{
+    color: #000;
+    font-weight:bold;
+}
+#team_area .team-info:hover h4 a{
+    color: #fff;
+    text-decoration: underline;
+}
+#team_area .team-info h5{}
+#team_area .team-info p{}
+#team_area .team-info a{
+    color: #295498;
+}
+#team_area .team:hover a{
+    color: #63BEEA;
 }
