@@ -207,3 +207,24 @@ a.button-style:hover{
     border-radius:0;
 }
 
+/*========================================================/
+\==================| login_page css |======================\
+/========================================================*/
+#time_form{}
+#time_form form{
+    background: #f6f6f6;
+    margin: 150px auto;
+    padding: 15px 30px;
+    box-shadow: 0 4px 4px -3px rgba(0,0,0,0.2);
+}
+#time_form form h2{
+    margin-bottom:30px;
+    color: #1A3874;
+}
+#time_form form a{
+    color: #3DB4D7;
+}
+#time_form form .form-control{
+    border-radius:0;
+}
+
