@@ -7,7 +7,6 @@ a,
 a:hover,
 a:focus,
 a:active{
-    color: #000;
     text-decoration: none;
     outline: none;
     transition: all 0.3s;
@@ -58,6 +57,7 @@ header .nav li a{
     padding-right: 15px;
     padding-left: 15px;
     font-size: 16px;
+    color: #000;
 }
 header .nav li a:hover,
 header .nav li a:active,
@@ -131,23 +131,23 @@ a.button-style:hover{
     color: #63BEEA;
 }
 #team_area{}
-#team_area .team{
+.team{
     background: #f6f6f6;
     transition: all 0.3s;
     box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2);
     margin-bottom:30px;
 }
-#team_area .team:hover{
+.team:hover{
     background: #121733;
     color: #fff;
 }
-#team_area .team .img{
+.team .img{
     background: url(../images/imgaa.jpeg);
     background-size: cover;
     height:140px;
     position: relative;
 }
-#team_area .team .img img{
+.team .img img{
     width: 130px;
     height: 130px;
     box-shadow: 0 0 25px 0 #fff;
@@ -158,23 +158,23 @@ a.button-style:hover{
     border-radius: 100%;
     border: 5px solid #fff;
 }
-#team_area .team-info{
+.team-info{
     padding:90px 25px 35px;
 }
-#team_area .team-info h4 a{
+.team-info h4 a{
     color: #000;
     font-weight:bold;
 }
-#team_area .team-info:hover h4 a{
+.team-info:hover h4 a{
     color: #fff;
     text-decoration: underline;
 }
-#team_area .team-info h5{}
-#team_area .team-info p{}
-#team_area .team-info a{
+.team-info h5{}
+ .team-info p{}
+.team-info a{
     color: #295498;
 }
-#team_area .team:hover a{
+.team:hover a{
     color: #63BEEA;
 }
 
@@ -208,7 +208,7 @@ a.button-style:hover{
 }
 
 /*========================================================/
-\==================| login_page css |======================\
+\==================| in-out-time css |======================\
 /========================================================*/
 #time_form{}
 #time_form form{
@@ -221,10 +221,14 @@ a.button-style:hover{
     margin-bottom:30px;
     color: #1A3874;
 }
-#time_form form a{
-    color: #3DB4D7;
-}
 #time_form form .form-control{
     border-radius:0;
+}
+
+/*========================================================/
+\==================| after_save_area css |======================\
+/========================================================*/
+#after_save_area{
+    margin:150px 0 25px;
 }
 
