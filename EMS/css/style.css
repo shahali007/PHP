@@ -232,3 +232,33 @@ a.button-style:hover{
     margin:150px 0 25px;
 }
 
+
+/*========================================================/
+\==================| "my_profile_edit css |======================\
+/========================================================*/
+.profile-single-info{}
+.profile-single-info p > b{
+    display: inline-block;
+    width:150px;
+}
+
+/*========================================================/
+\==================| "my_profile_edit css |======================\
+/========================================================*/
+#my_profile_edit{
+
+}
+#my_profile_edit form{
+    background: #f6f6f6;
+    margin: 100px auto;
+    padding: 15px 30px;
+    box-shadow: 0 4px 4px -3px rgba(0,0,0,0.2);
+}
+#my_profile_edit form h2{
+    margin-bottom:30px;
+    color: #1A3874;
+}
+#my_profile_edit form .form-control{
+    border-radius:0;
+}
+
