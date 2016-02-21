@@ -185,6 +185,17 @@ a.button-style:hover{
 #contact_area{
     margin:120px 0 50px;
 }
+#contact_form{}
+#contact_form form{}
+#contact_form form .form-control {
+    border: none;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 1px solid #f1f1f1;
+    margin-top: 25px;
+    padding-left:0;
+}
 
 /*========================================================/
 \==================| login_page css |======================\
