@@ -116,6 +116,7 @@ footer a{
     width: 150px;
     position: relative;
     text-align: center;
+    border: none;
 }
 .button-style::before{
     position: absolute;
@@ -176,3 +177,26 @@ a.button-style:hover{
 #team_area .team:hover a{
     color: #63BEEA;
 }
+
+
+/*========================================================/
+\==================| login_page css |======================\
+/========================================================*/
+#login_form{}
+#login_form form{
+    background: #f6f6f6;
+    margin: 150px auto;
+    padding: 15px 30px;
+    box-shadow: 0 4px 4px -3px rgba(0,0,0,0.2);
+}
+#login_form form h2{
+    margin-bottom:30px;
+    color: #1A3874;
+}
+#login_form form a{
+    color: #3DB4D7;
+}
+#login_form form .form-control{
+    border-radius:0;
+}
+
