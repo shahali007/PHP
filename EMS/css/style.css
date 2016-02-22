@@ -308,3 +308,15 @@ a.button-style:hover{
 #leave_management_area .form-control{
     box-shadow: none;
 }
+
+/*========================================================/
+\==================| working_hour css |======================\
+/========================================================*/
+#working_hour{
+    margin-top:80px;
+    margin-bottom:250px;
+}
+#working_hour form .width-half{
+    width:45%;
+    display: inline-block;
+}
