@@ -302,8 +302,7 @@ a.button-style:hover{
 \==================| leave_management_area css |======================\
 /========================================================*/
 #leave_management_area{
-    margin-top:80px;
-    margin-bottom:250px;
+    margin-top:120px;
 }
 #leave_management_area .form-control{
     box-shadow: none;
