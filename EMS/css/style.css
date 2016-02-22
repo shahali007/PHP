@@ -305,3 +305,6 @@ a.button-style:hover{
     margin-top:80px;
     margin-bottom:250px;
 }
+#leave_management_area .form-control{
+    box-shadow: none;
+}
