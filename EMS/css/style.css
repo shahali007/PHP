@@ -36,7 +36,7 @@ header .navbar{
     padding: 15px 0;
     box-shadow: 0 0 5px 0 rgba(0,0,0,0.3);
     margin: 0;
-    z-index: 1;
+    z-index: 5;
     background: #fff;
 }
 header .navbar-brand{
@@ -253,9 +253,6 @@ a.button-style:hover{
     width:150px;
 }
 
-/*========================================================/
-\==================| "my_profile_edit css |======================\
-/========================================================*/
 #my_profile_edit{
 
 }
@@ -273,3 +270,10 @@ a.button-style:hover{
     border-radius:0;
 }
 
+
+/*========================================================/
+\==================| "dahboard_table css |======================\
+/========================================================*/
+#dahboard_table{
+    margin-top:80px;
+}

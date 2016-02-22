@@ -1,0 +1,130 @@
+<!Doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EMS | Dashborard</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- start header_area -->
+    <header>
+        <div class="navbar navbar-static-top navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="index.html" class="navbar-brand">EMS</a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#MyNavigation">
+                        <span class="sr-only"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="MyNavigation">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="">Attendance</a></li>
+                        <li><a href="">My Profile</a></li>
+                        <li><a href="">Add Employee</a></li>
+                        <li><a href="">Employee Status</a></li>
+                        <li><a href="">Leave Management</a></li>
+                        <li><a href="">Working H.</a></li>
+                        <li><a href="login.html">Logout</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End header_area -->
+
+    <!--Start footer_area-->
+    <section id="dahboard_table">
+        <div class="container">
+            <div class="row margin25pxT">
+                <div class="col-md-4 col-md-offset-4">
+                    <form action="" method="post">
+                        <div class="input-group">
+                            <label for="userInOutTime" class="sr-only"></label>
+                            <select name="" id="userInOutTime" class="form-control">
+                                <option value="">-- Department --</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Accounting">Accounting</option>
+                                <option value="HRM">HRM</option>
+                            </select>
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="submit">Search</button>
+                            </span>
+                        </div><!-- /input-group -->
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered text-center">
+                            <tr class="active">
+                                <th style="text-align: center; width: 80px;">SL</th>
+                                <th style="text-align: center; width: 120px;">E-ID</th>
+                                <th style="text-align: center; width: auto;">Department</th>
+                                <th style="text-align: center; width: auto;">Designation</th>
+                                <th style="text-align: center; width: auto;">Status</th>
+                                <th style="text-align: center; width: 120px;">Action</th>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>00001</td>
+                                <td>Marketing</td>
+                                <td>SR</td>
+                                <td>Active</td>
+                                <td>
+                                    <a href="" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="view"><i class="fa fa-eye-slash"></i></a>
+                                    <a href="" class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil-square-o"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>02</td>
+                                <td>00002</td>
+                                <td>Accounts</td>
+                                <td>Accountatnt</td>
+                                <td>Active</td>
+                                <td>
+                                    <a href="" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="view"><i class="fa fa-eye-slash"></i></a>
+                                    <a href="" class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil-square-o"></i></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End footer_area-->
+
+    <!-- Start dahboard_table-->
+    <footer>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>All Rights Reserved. &copy;<a href="#">ShahAli Bogdadi.</a>2016</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End dahboard_table-->
+
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+        // for tooltip
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+</body>
+</html>
