@@ -29,6 +29,13 @@ body{
     margin-top:25px;
     margin-bottom:25px;
 }
+.form-control{
+    box-shadow: none;
+}
+.form-control:focus{
+    outline: none;
+    box-shadow: none;
+}
 /*================| header css |================*/
 header{}
 header .navbar{
@@ -202,10 +209,10 @@ a.button-style:hover{
 /========================================================*/
 #login_form{}
 #login_form form{
-    background: #f6f6f6;
+    /*background: #f6f6f6;*/
     margin: 150px auto;
     padding: 15px 30px;
-    box-shadow: 0 4px 4px -3px rgba(0,0,0,0.2);
+    /*box-shadow: 0 4px 4px -3px rgba(0,0,0,0.2);*/
 }
 #login_form form h2{
     margin-bottom:30px;
@@ -216,6 +223,7 @@ a.button-style:hover{
 }
 #login_form form .form-control{
     border-radius:0;
+    box-shadow: none;
 }
 
 /*========================================================/
@@ -223,10 +231,10 @@ a.button-style:hover{
 /========================================================*/
 #time_form{}
 #time_form form{
-    background: #f6f6f6;
+    /*background: #f6f6f6;*/
     margin: 150px auto;
     padding: 15px 30px;
-    box-shadow: 0 4px 4px -3px rgba(0,0,0,0.2);
+    /*box-shadow: 0 4px 4px -3px rgba(0,0,0,0.2);*/
 }
 #time_form form h2{
     margin-bottom:30px;
@@ -234,6 +242,7 @@ a.button-style:hover{
 }
 #time_form form .form-control{
     border-radius:0;
+    box-shadow: none;
 }
 
 /*========================================================/
@@ -250,7 +259,7 @@ a.button-style:hover{
 .profile-single-info{}
 .profile-single-info p > b{
     display: inline-block;
-    width:150px;
+    width:120px;
 }
 
 #my_profile_edit{
@@ -276,4 +285,23 @@ a.button-style:hover{
 /========================================================*/
 #dahboard_table{
     margin-top:80px;
+}
+
+
+/*========================================================/
+\==================| add_employee css |======================\
+/========================================================*/
+#add_employee{}
+#add_employee form{}
+#add_employee form .form-control{
+    box-shadow: none;
+    border-radius:0;
+}
+
+/*========================================================/
+\==================| leave_management_area css |======================\
+/========================================================*/
+#leave_management_area{
+    margin-top:80px;
+    margin-bottom:250px;
 }
