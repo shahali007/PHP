@@ -36,7 +36,11 @@ INSERT INTO player_info(player_id,Name,Speciality,Age,Country) VALUES(4,"Kumara 
 INSERT INTO batting_statistics(player_id,Match_No,opponent_team,Run,Ball,strike_rate) VALUES(3,"8","India",50,50,100.00);
 INSERT INTO batting_statistics(player_id,Match_No,opponent_team,Run,Ball,strike_rate) VALUES(6,"8","India",70,50,120.00);
 
+select player_id, Name, Speciality, opponent_team, Run, Ball
+================================================================
+SELECT Name, Speciality, opponent_team, Run, Ball FROM player_info, batting_statistics WHERE Run>=40 AND player_info.player_id = 
 
+batting_statistics.player_id
 
 
 
