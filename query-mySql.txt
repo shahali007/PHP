@@ -1,0 +1,98 @@
+cricket database / table player_info
+===================================
+CREATE TABLE player_info(
+    player_id INT(3) PRIMARY KEY,
+    Name VARCHAR (50),
+    Speciality VARCHAR (50),
+    Age VARCHAR(35),
+    Country VARCHAR (25)
+);
+
+CREATE TABLE Batting_Statistics(
+    player_id INT(3),
+    Match_No VARCHAR (20),
+    opponent_team VARCHAR (50),
+    Run INT(3),
+    Ball INT (3),
+    strike_rate INT(10),
+    FOREIGN KEY(player_id) REFERENCES player_info (player_id)
+);
+
+CREATE TABLE Bowling_Statistics(
+    player_id INT(3),
+    Match_No VARCHAR (20),
+    opponent_team VARCHAR (50),
+    Over VARCHAR (20),
+    Wicket VARCHAR (20),
+    Run_given INT(3),
+    Eco_rate FLOAT(10),
+    FOREIGN KEY(player_id) REFERENCES player_info (player_id)
+);
+
+INSERT INTO player_info(player_id,Name,Speciality,Age,Country) VALUES(2,"Burhan Uddin","Bowler","28","North Africa");
+INSERT INTO player_info(player_id,Name,Speciality,Age,Country) VALUES(3,"Stiphen Flayming","Batsman","30","Newzealand");
+INSERT INTO player_info(player_id,Name,Speciality,Age,Country) VALUES(4,"Kumara Sangakara","Batsman","33","Srilanka");
+
+INSERT INTO batting_statistics(player_id,Match_No,opponent_team,Run,Ball,strike_rate) VALUES(3,"8","India",50,50,100.00);
+INSERT INTO batting_statistics(player_id,Match_No,opponent_team,Run,Ball,strike_rate) VALUES(6,"8","India",70,50,120.00);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+QUREY.txt
+1 contributor
+RawBlameHistory     45 lines (39 sloc)  2.21 KB
+CREATE DATABASE===>  CREATE DATABASE yourdatabasea_name;
+CREATE ==TABLE ==== >  CREATE TABLE ct_info( SL INT(5) AUTO_INCREMENT PRIMARY KEY,ID VARCHAR(20), NAME VARCHAR(20),EMAIL VARCHAR(20),LOCATION VARCHAR(20), Occupation VARCHAR(20),SALARY VARCHAR(20));
+
+INSERT====>  INSERT INTO ct_info( ID, NAME, EMAIL, LOCATION, Occupation, SALARY) VALUES ("1954","rabbani","rabbnai@gmail.com","joypurhat","student","0000");
+UPDATE====>   UPDATE ct_info SET EMAIL="rana@gmaul.com.COM" WHERE  NAME="rana";
+SELECT=  ANY FILD==>  SELECT NAME,ID FROM ct_info WHERE SALARY>20000;
+select locatino====>  SELECT NAME,EMAIL FROM ct_info WHERE LOCATION="dhaka";
+OR====> SELECT NAME ,ID FROM ct_info WHERE  SALARY=30000 OR SALARY=40000;
+DISTINCT===> SELECT  DISTINCT(NAME)  FROM ct_info ;
+ORDER BY===> DESC==SELECT SALARY FROM ct_info WHERE SALARY ORDER BY SALARY DESC
+ORDER BY===> SELECT * FROM ct_info ORDER BY NAME
+DESC===> SELECT * FROM ct_info WHERE SALARY >1000 ORDER BY SALARY DESC 
+ASC===> SELECT * FROM ct_info WHERE SALARY >1000 ORDER BY SALARY ASC 
+IN ====> SELECT NAME,ID FROM ct_info WHERE LOCATION IN("dhaka","bogra");
+BETWEEN===> SELECT * FROM ct_info WHERE SALARY BETWEEN 20000 AND 30000;
+BETWIN+AND+ORDER BY===> SELECT * FROM ct_info WHERE SALARY BETWEEN 20000 AND 30000 ORDER BY SALARY
+SELECT COUNT===> SELECT COUNT(NAME) FROM `ct_info` WHERE SALARY BETWEEN 20000 AND 30000;
+ALTER TABLE====> ALTER TABLE ct_info CHANGE Occupation OCCUPATION VARCHAR(20);
+ADD===> ALTER TABLE ct_info ADD MORE_INFO VARCHAR(20);
+DROUP===> ALTER TABLE ct_info DROP COLUMN  MORE_INFO;
+DELEATE===> DELETE FROM ct_info WHERE ID="2009";
