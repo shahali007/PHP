@@ -61,7 +61,12 @@ SELECT Name, Speciality, Country, opponent_team, Over, Wicket FROM player_info, 
 player_info.player_id = bowling_statistics.player_id
 
 
-
+select Name, Speciality, batting_statistics.opponent_team, Run, Ball, strike_rate, Over, Wicket, Run_given, Eco_rate
+======================================================================================================================
+SELECT Name, Speciality, batting_statistics.opponent_team, Run, Ball, strike_rate, Over, Wicket, Run_given, Eco_rate FROM 
+player_info,batting_statistics,bowling_statistics WHERE strike_rate>=100 AND Eco_rate<=5 AND 
+batting_statistics.Match_No=bowling_statistics.Match_No AND bowling_statistics.player_id = batting_statistics.player_id AND 
+player_info.player_id=batting_statistics.player_id
 
 
 
