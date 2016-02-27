@@ -32,22 +32,33 @@ CREATE TABLE Bowling_Statistics(
 INSERT INTO player_info(player_id,Name,Speciality,Age,Country) VALUES(2,"Burhan Uddin","Bowler","28","North Africa");
 INSERT INTO player_info(player_id,Name,Speciality,Age,Country) VALUES(3,"Stiphen Flayming","Batsman","30","Newzealand");
 INSERT INTO player_info(player_id,Name,Speciality,Age,Country) VALUES(4,"Kumara Sangakara","Batsman","33","Srilanka");
+INSERT INTO player_info(player_id,Name,Speciality,Age,Country) VALUES(15,"Sobuj","Bowler","48","Bangladesh");
+INSERT INTO player_info(player_id,Name,Speciality,Age,Country) VALUES(14,"Nafis Iqbal","All Rounder","38","Bangladesh");
+INSERT INTO player_info(player_id,Name,Speciality,Age,Country) VALUES(12,"Nasir","All Rounder","23","Bangladesh");
+INSERT INTO player_info(player_id,Name,Speciality,Age,Country) VALUES(13,"Jan Kayo","Bowler","28","Denmark");
 
 INSERT INTO batting_statistics(player_id,Match_No,opponent_team,Run,Ball,strike_rate) VALUES(3,"8","India",50,50,100.00);
 INSERT INTO batting_statistics(player_id,Match_No,opponent_team,Run,Ball,strike_rate) VALUES(6,"8","India",70,50,120.00);
+INSERT INTO batting_statistics(player_id,Match_No,opponent_team,Run,Ball,strike_rate) VALUES(13,"7","India",88,50,190.00);
+INSERT INTO batting_statistics(player_id,Match_No,opponent_team,Run,Ball,strike_rate) VALUES(12,"11","India",70,50,180.00);
+INSERT INTO batting_statistics(player_id,Match_No,opponent_team,Run,Ball,strike_rate) VALUES(14,"9","India",60,50,185.00);
+
+
+INSERT INTO bowling_statistics(player_id,Match_No,opponent_team,Over,Wicket,Run_given,Eco_rate) VALUES(3,"8","India","8","3",22,230.00);
+INSERT INTO bowling_statistics(player_id,Match_No,opponent_team,Over,Wicket,Run_given,Eco_rate) VALUES(3,"8","India","8","3",22,230.00);
+
 
 select player_id, Name, Speciality, opponent_team, Run, Ball
 ================================================================
 SELECT Name, Speciality, opponent_team, Run, Ball FROM player_info, batting_statistics WHERE Run>=40 AND player_info.player_id = 
+
 batting_statistics.player_id
 
 name spe country opp over wic
 =========================================
-SELECT Name, Speciality, Country, opponent_team, Over, Wicket FROM player_info, bowling_statistics WHERE Wicket>=5 AND player_info.player_id = bowling_statistics.player_id
+SELECT Name, Speciality, Country, opponent_team, Over, Wicket FROM player_info, bowling_statistics WHERE Wicket>=5 AND 
 
-
-
-
+player_info.player_id = bowling_statistics.player_id
 
 
 
@@ -81,9 +92,13 @@ QUREY.txt
 1 contributor
 RawBlameHistory     45 lines (39 sloc)  2.21 KB
 CREATE DATABASE===>  CREATE DATABASE yourdatabasea_name;
-CREATE ==TABLE ==== >  CREATE TABLE ct_info( SL INT(5) AUTO_INCREMENT PRIMARY KEY,ID VARCHAR(20), NAME VARCHAR(20),EMAIL VARCHAR(20),LOCATION VARCHAR(20), Occupation VARCHAR(20),SALARY VARCHAR(20));
+CREATE ==TABLE ==== >  CREATE TABLE ct_info( SL INT(5) AUTO_INCREMENT PRIMARY KEY,ID VARCHAR(20), NAME VARCHAR(20),EMAIL VARCHAR
 
-INSERT====>  INSERT INTO ct_info( ID, NAME, EMAIL, LOCATION, Occupation, SALARY) VALUES ("1954","rabbani","rabbnai@gmail.com","joypurhat","student","0000");
+(20),LOCATION VARCHAR(20), Occupation VARCHAR(20),SALARY VARCHAR(20));
+
+INSERT====>  INSERT INTO ct_info( ID, NAME, EMAIL, LOCATION, Occupation, SALARY) VALUES 
+
+("1954","rabbani","rabbnai@gmail.com","joypurhat","student","0000");
 UPDATE====>   UPDATE ct_info SET EMAIL="rana@gmaul.com.COM" WHERE  NAME="rana";
 SELECT=  ANY FILD==>  SELECT NAME,ID FROM ct_info WHERE SALARY>20000;
 select locatino====>  SELECT NAME,EMAIL FROM ct_info WHERE LOCATION="dhaka";
