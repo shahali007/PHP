@@ -15,7 +15,7 @@
         <div class="navbar navbar-static-top navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <a href="index.html" class="navbar-brand">EMS</a>
+                    <a href="index.php" class="navbar-brand">EMS</a>
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                             data-target="#MyNavigation">
                         <span class="sr-only"></span>
@@ -26,13 +26,13 @@
                 </div>
                 <div class="collapse navbar-collapse" id="MyNavigation">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="dashboard.html">Attendance</a></li>
-                        <li><a href="my-profile.html">My Profile</a></li>
-                        <li><a href="add-employee.html">Add Employee</a></li>
-                        <li><a href="employee-status.html">Employee Status</a></li>
-                        <li><a href="leave-management.html">Leave Management</a></li>
-                        <li class="active"><a href="working-hour.html">Working H.</a></li>
-                        <li><a href="login.html">Logout</a></li>
+                        <li><a href="dashboard.php">Attendance</a></li>
+                        <li><a href="my-profile.php">My Profile</a></li>
+                        <li class="active"><a href="add-employee.php">Add Employee</a></li>
+                        <li><a href="employee-status.php">Employee Status</a></li>
+                        <li><a href="leave-management.php">Leave Management</a></li>
+                        <li><a href="working-hour.php">Working H.</a></li>
+                        <li><a href="login.php">Logout</a></li>
                     </ul>
                 </div>
             </div>

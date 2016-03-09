@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>EMS | Login</title>
+    <title>EMS | Time</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -15,7 +15,7 @@
         <div class="navbar navbar-static-top navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <a href="index.html" class="navbar-brand">EMS</a>
+                    <a href="index.php" class="navbar-brand">EMS</a>
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                             data-target="#MyNavigation">
                         <span class="sr-only"></span>
@@ -26,10 +26,11 @@
                 </div>
                 <div class="collapse navbar-collapse" id="MyNavigation">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li class="active"><a href="login.html">Login</a></li>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="about.php">About</a></li>
+                        <li><a href="contact.php">Contact</a></li>
+                        <li class="active"><a href="my_profile.php">My profile</a></li>
+                        <li><a href="login.php">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -38,24 +39,27 @@
     <!-- End header_area -->
 
     <!-- Start login_form-->
-    <section id="login_form">
+    <section id="time_form">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
                     <form action="" method="post">
-                        <h2 class="text-center"><i class="fa fa-lock"></i> Login</h2>
+                        <h2 class="text-center"><i class="fa fa-clock-o"></i> In/Out Time</h2>
                         <div class="form-group">
-                            <label for="userEmail" class="sr-only"></label>
-                            <input type="email" id="userEmail" class="form-control" placeholder="Email">
+                            <label for="userInOutTime" class="sr-only"></label>
+                            <select name="" id="userInOutTime" class="form-control">
+                                <option value="TimeIn">Time In</option>
+                                <option value="TimeOut">Time Out</option>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="userPassword" class="sr-only"></label>
-                            <input type="password" id="userPassword" class="form-control" placeholder="Password">
+                            <label for="userCause" class="sr-only"></label>
+                            <small>(If Late or want to leave early)</small>
+                            <input type="text" id="userCause" class="form-control" placeholder="Reason">
                         </div>
                         <div class="form-group">
                             <label for="submit"></label>
-                            <button type="submit" id="submit" class="btn btn-primary">Login</button>
-                            <a href="#" class="pull-right">Forgot Password?</a>
+                            <button type="submit" id="submit" class="btn btn-primary">Save</button>
                         </div>
                     </form>
                 </div>

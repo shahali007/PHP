@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>EMS | Add Employee</title>
+    <title>EMS | Dashborard</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -15,7 +15,7 @@
         <div class="navbar navbar-static-top navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <a href="index.html" class="navbar-brand">EMS</a>
+                    <a href="index.php" class="navbar-brand">EMS</a>
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                             data-target="#MyNavigation">
                         <span class="sr-only"></span>
@@ -26,73 +26,73 @@
                 </div>
                 <div class="collapse navbar-collapse" id="MyNavigation">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="dashboard.html">Attendance</a></li>
-                        <li><a href="my-profile.html">My Profile</a></li>
-                        <li class="active"><a href="add-employee.html">Add Employee</a></li>
-                        <li><a href="employee-status.html">Employee Status</a></li>
-                        <li><a href="leave-management.html">Leave Management</a></li>
-                        <li><a href="working-hour.html">Working H.</a></li>
-                        <li><a href="login.html">Logout</a></li>
+                        <li class="active"><a href="dashboard.php">Attendance</a></li>
+                        <li><a href="my-profile.php">My Profile</a></li>
+                        <li><a href="add-employee.php">Add Employee</a></li>
+                        <li><a href="employee-status.php">Employee Status</a></li>
+                        <li><a href="leave-management.php">Leave Management</a></li>
+                        <li><a href="working-hour.php">Working H.</a></li>
+                        <li><a href="login.php">Logout</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </header>
-    <!-- End header_area -->
+<!-- End header_area -->
 
-    <!-- Start add_employee-->
-    <section id="add_employee">
+    <!--Start dahboard_table-->
+    <section id="dahboard_table">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+            <div class="row margin25pxT">
+                <div class="col-md-4 col-md-offset-4">
                     <form action="" method="post">
-                        <h3 class="text-center"><i class="fa fa-user-plus"></i> Add Employee</h3>
-                        <hr>
-                        <div class="form-group">
-                            <label for="AddEmpName" class="sr-only"></label>
-                            <input type="text" id="AddEmpName" class="form-control" placeholder="Name">
-                        </div>
-                        <div class="form-group">
-                            <label for="AddEmpDes" class="sr-only"></label>
-                            <input type="text" id="AddEmpDes" class="form-control" placeholder="Designation">
-                        </div>
-                        <div class="form-group">
-                            <label for="AddEmpDep" class="sr-only"></label>
-                            <select name="" id="AddEmpDep" class="form-control">
+                        <div class="input-group">
+                            <label for="EmpDepSearch" class="sr-only"></label>
+                            <select name="" id="EmpDepSearch" class="form-control">
                                 <option value="">-- Department --</option>
                                 <option value="Marketing">Marketing</option>
                                 <option value="Accounting">Accounting</option>
                                 <option value="HRM">HRM</option>
                             </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="AddEmpGender" class="sr-only"></label>
-                            <select name="" id="AddEmpGender" class="form-control">
-                                <option value="">-- Gender --</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="AddEmpEmail" class="sr-only"></label>
-                            <input type="email" id="AddEmpEmail" class="form-control" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <label for="userAddress" class="sr-only"></label>
-                            <input type="text" id="userAddress" class="form-control" placeholder="Address">
-                        </div>
-                        <div class="form-group">
-                            <label for="submit"></label>
-                            <button type="submit" id="submit" class="btn btn-primary">Add</button>
-                        </div>
+                            <span class="input-group-btn">
+                                <button class="btn btn-info" type="submit">Search</button>
+                            </span>
+                        </div><!-- /input-group -->
                     </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered text-center">
+                            <tr class="active">
+                                <th style="text-align: center; width: 80px;">SL</th>
+                                <th style="text-align: center; width: 120px;">E-ID</th>
+                                <th style="text-align: center; width: auto;">Department</th>
+                                <th style="text-align: center; width: auto;">Designation</th>
+                                <th style="text-align: center; width: auto;">Status</th>
+                                <th style="text-align: center; width: 120px;">Action</th>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>00001</td>
+                                <td>Marketing</td>
+                                <td>SR</td>
+                                <td>Active</td>
+                                <td>
+                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#01"><i class="fa fa-eye-slash"></i></button>
+                                    <a href="my-profile-edit.html" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"></i></a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- End add_employee-->
+    <!--End dahboard_table-->
 
-    <!-- Start footer-->
+    <!-- Start footer_area-->
     <footer>
         <hr>
         <div class="container">
@@ -103,7 +103,7 @@
             </div>
         </div>
     </footer>
-    <!-- End footer-->
+    <!-- End footer_area -->
 
     <!-- Strat modal section -->
     <!-- Large modal -->

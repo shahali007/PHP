@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>EMS | Employee Status</title>
+    <title>EMS | Dashborard</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -15,7 +15,7 @@
         <div class="navbar navbar-static-top navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <a href="index.html" class="navbar-brand">EMS</a>
+                    <a href="index.php" class="navbar-brand">EMS</a>
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                             data-target="#MyNavigation">
                         <span class="sr-only"></span>
@@ -26,13 +26,13 @@
                 </div>
                 <div class="collapse navbar-collapse" id="MyNavigation">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="dashboard.html">Attendance</a></li>
-                        <li><a href="my-profile.html">My Profile</a></li>
-                        <li><a href="add-employee.html">Add Employee</a></li>
-                        <li class="active"><a href="employee-status.html">Employee Status</a></li>
-                        <li><a href="leave-management.html">Leave Management</a></li>
-                        <li><a href="working-hour.html">Working H.</a></li>
-                        <li><a href="login.html">Logout</a></li>
+                        <li><a href="dashboard.php">Attendance</a></li>
+                        <li><a href="my-profile.php">My Profile</a></li>
+                        <li><a href="add-employee.php">Add Employee</a></li>
+                        <li><a href="employee-status.php">Employee Status</a></li>
+                        <li class="active"><a href="leave-management.php">Leave Management</a></li>
+                        <li><a href="working-hour.php">Working H.</a></li>
+                        <li><a href="login.php">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -40,55 +40,31 @@
     </header>
     <!-- End header_area -->
 
-    <!--Start dahboard_table-->
-    <section id="dahboard_table">
+    <!--Start leave_management_area-->
+    <section id="leave_management_area">
         <div class="container">
             <div class="row margin25pxT">
                 <div class="col-md-4 col-md-offset-4">
                     <form action="" method="post">
+                        <h3>Remain Leave</h3>
                         <div class="input-group">
                             <input type="text" name="" class="form-control" id="" placeholder="Employee ID"/>
-                            <span class="input-group-btn"><button type="submit" class="btn btn-info">Search</button></span>
+                            <span class="input-group-btn"><button type="submit" class="btn btn-default">Search</button></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="leaveValue"></label>
+                            <input type="text" class="form-control" value="23" id="leaveValue">
+                        </div>
+                        <div class="form-group">
+                            <label for="submit"></label>
+                            <button type="submit" id="submit" class="btn btn-primary">Update</button>
                         </div>
                     </form>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="table-responsive">
-                        <table class="table table-hover table-bordered text-center">
-                            <tr class="active">
-                                <th style="text-align: center; width: 80px;">SL</th>
-                                <th style="text-align: center; width: 120px;">E-ID</th>
-                                <th style="text-align: center; width: auto;">Name</th>
-                                <th style="text-align: center; width: auto;">Department</th>
-                                <th style="text-align: center; width: auto;">Designation</th>
-                                <th style="text-align: center; width: auto;">Salary</th>
-                                <th style="text-align: center; width: 120px;">working hour/week</th>
-                                <th style="text-align: center; width: 80px;">Leave remain</th>
-                                <th style="text-align: center; width: 120px;">Action</th>
-                            </tr>
-                            <tr>
-                                <td>01</td>
-                                <td>00001</td>
-                                <td>ABC</td>
-                                <td>Marketing</td>
-                                <td>SR</td>
-                                <td>50000</td>
-                                <td>40</td>
-                                <td>21 days</td>
-                                <td>
-                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#01"><i class="fa fa-eye-slash"></i></button>
-                                    <a href="my-profile-edit.html" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"></i></a>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
-    <!--End dahboard_table-->
+    <!--End leave_management_area-->
 
     <!-- Start footer_area-->
     <footer>
@@ -101,9 +77,12 @@
             </div>
         </div>
     </footer>
-    <!-- End footer_area-->
+    <!-- End footer_area -->
 
     <!-- Strat modal section -->
+    <!-- Large modal -->
+    <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#01">Large modal</button>-->
+
     <div class="modal fade" id="01" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
         <div class="modal-dialog">
             <div class="modal-content">

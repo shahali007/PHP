@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>EMS | My Profile</title>
+    <title>EMS | After Save</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -15,7 +15,7 @@
         <div class="navbar navbar-static-top navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <a href="index.html" class="navbar-brand">EMS</a>
+                    <a href="index.php" class="navbar-brand">EMS</a>
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                             data-target="#MyNavigation">
                         <span class="sr-only"></span>
@@ -26,11 +26,13 @@
                 </div>
                 <div class="collapse navbar-collapse" id="MyNavigation">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li class="active"><a href="my_profile.html">My profile</a></li>
-                        <li><a href="login.html">Logout</a></li>
+                        <li><a href="dashboard.php">Attendance</a></li>
+                        <li class="active"><a href="my-profile.php">My Profile</a></li>
+                        <li><a href="add-employee.php">Add Employee</a></li>
+                        <li><a href="employee-status.php">Employee Status</a></li>
+                        <li><a href="leave-management.php">Leave Management</a></li>
+                        <li><a href="working-hour.php">Working H.</a></li>
+                        <li><a href="login.php">Logout</a></li>
                     </ul>
                 </div>
             </div>

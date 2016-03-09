@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>EMS | My Profile</title>
+    <title>EMS | Login</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -15,7 +15,7 @@
         <div class="navbar navbar-static-top navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <a href="index.html" class="navbar-brand">EMS</a>
+                    <a href="index.php" class="navbar-brand">EMS</a>
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                             data-target="#MyNavigation">
                         <span class="sr-only"></span>
@@ -26,11 +26,10 @@
                 </div>
                 <div class="collapse navbar-collapse" id="MyNavigation">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li class="active"><a href="my_profile.html">My profile</a></li>
-                        <li><a href="login.html">Logout</a></li>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="about.php">About</a></li>
+                        <li><a href="contact.php">Contact</a></li>
+                        <li class="active"><a href="login.php">Login</a></li>
                     </ul>
                 </div>
             </div>
@@ -39,32 +38,26 @@
     <!-- End header_area -->
 
     <!-- Start login_form-->
-    <section id="after_save_area">
+    <section id="login_form">
         <div class="container">
             <div class="row">
-                <div class="col-md-3 text-center">
-                    <div class="team">
-                        <div class="img"><img src="images/placeholder.png" alt="Team"></div>
-                        <div class="team-info">
-                            <h4><a href="#">Employee name</a></h4>
-                            <h5>Designation</h5>
-                            <a href="mailto:coderstrust@ems.com">Email address</a>
+                <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+                    <form action="" method="post">
+                        <h2 class="text-center"><i class="fa fa-lock"></i> Login</h2>
+                        <div class="form-group">
+                            <label for="userEmail" class="sr-only"></label>
+                            <input type="email" id="userEmail" class="form-control" placeholder="Email">
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="profile-single-info">
-                        <p><b>Name </b>: ABC </p>
-                        <p><b>Employee ID </b>: 01 </p>
-                        <p><b>Designation </b>: Employee </p>
-                        <p><b>Gender </b>: Male</p>
-                        <p><b>Email </b>: abc@ems.com </p>
-                        <p><b>Password </b>: ******** </p>
-                        <p><b>Address </b>: Dhaka </p>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <a href="my-profile-edit.html" class="btn btn-primary btn-lg pull-right">EDIT</a>
+                        <div class="form-group">
+                            <label for="userPassword" class="sr-only"></label>
+                            <input type="password" id="userPassword" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="form-group">
+                            <label for="submit"></label>
+                            <button type="submit" id="submit" class="btn btn-primary">Login</button>
+                            <a href="#" class="pull-right">Forgot Password?</a>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
