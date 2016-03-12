@@ -1,3 +1,52 @@
+<?php
+include('pdo_connection.php');
+include('database_config.php');
+$db_user =$database_user;
+$db_pass =$databse_pass;
+$db_name=$database_name;
+$dbcon=$connection_object->connection('localhost',$db_user,$db_pass,$db_name);
+
+
+if(isset($_POST['login']))
+{
+    $LoginEmail = $_POST['loginEmail'];
+    $LoginPassword = $_POST['loginPassword'];
+
+    $loginSql = "SELECT * FROM employee_details WHERE email='$LoginEmail' AND password='$LoginPassword'";
+    $loginData = $dbcon->query($loginSql);
+    $Row = $loginData->fetch(PDO::FETCH_ASSOC);
+
+    $user_email = $Row['email'];
+    $user_password = $Row['password'];
+    $user_role = $Row['user_role'];
+	
+	if($user_email !="" && $user_password !=""){
+		$_SESSION['user'] = $user_email;
+		$_SESSION['login'] = "True";
+		
+		if($user_role == "Admin"){
+			echo("<script>location.href='dashboard.php'</script>");
+		}
+		
+		else if($user_role == "Employee"){
+			echo("<script>location.href='my-profile.php'</script>");
+		}
+		
+		else{
+			echo("<script>location.href='login.php'</script>");
+		}
+	}
+	else{
+		$string = ' Sorry! Try again.\n';
+        echo "<script>alert(\"$string\")</script>";
+        echo("<script>location.href='login.php'</script>");
+	}
+
+
+}
+
+?>
+
 <!Doctype html>
 <html lang="en">
 <head>
@@ -46,15 +95,15 @@
                         <h2 class="text-center"><i class="fa fa-lock"></i> Login</h2>
                         <div class="form-group">
                             <label for="userEmail" class="sr-only"></label>
-                            <input type="email" id="userEmail" class="form-control" placeholder="Email">
+                            <input name="loginEmail" type="email" id="userEmail" class="form-control" placeholder="Email">
                         </div>
                         <div class="form-group">
                             <label for="userPassword" class="sr-only"></label>
-                            <input type="password" id="userPassword" class="form-control" placeholder="Password">
+                            <input name="loginPassword" type="password" id="userPassword" class="form-control" placeholder="Password">
                         </div>
                         <div class="form-group">
                             <label for="submit"></label>
-                            <button type="submit" id="submit" class="btn btn-primary">Login</button>
+                            <button name="login" type="submit" id="submit" class="btn btn-primary">Login</button>
                             <a href="#" class="pull-right">Forgot Password?</a>
                         </div>
                     </form>

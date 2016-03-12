@@ -32,7 +32,7 @@
                         <li><a href="employee-status.php">Employee Status</a></li>
                         <li><a href="leave-management.php">Leave Management</a></li>
                         <li><a href="working-hour.php">Working H.</a></li>
-                        <li><a href="login.php">Logout</a></li>
+                        <li><a href="logout.php">Logout</a></li>
                     </ul>
                 </div>
             </div>

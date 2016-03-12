@@ -30,7 +30,7 @@
                         <li><a href="about.html">About</a></li>
                         <li><a href="contact.php">Contact</a></li>
                         <li class="active"><a href="my_profile.php">My profile</a></li>
-                        <li><a href="login.html">Logout</a></li>
+                        <li><a href="logout.php">Logout</a></li>
                     </ul>
                 </div>
             </div>

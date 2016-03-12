@@ -13,7 +13,7 @@ if(isset($_POST['add']))
     $FatherName = $_POST['f_name'];
     $MotherName = $_POST['m_name'];
     $Email = $_POST['email'];
-    $Pass = md5($_POST['password']);
+    $Pass = $_POST['password'];
     $Gender = $_POST['gender'];
     $Address= $_POST['address'];
     $Image= $_POST['image'];
@@ -23,19 +23,21 @@ if(isset($_POST['add']))
     $Blood= $_POST['blood'];
     $UserRole= $_POST['userRole'];
 
-    //$Designation= $_POST['designation'];
-    //$Department= $_POST['department'];
-    //$Salary= $_POST['salary'];
-    //$Status= $_POST['status'];
+    $Department= $_POST['department'];
+    $Designation= $_POST['designation'];
+    $Status= $_POST['status'];
+    $Salary= $_POST['salary'];
 
 
 
     $sql = "INSERT INTO employee_details(e_id,name,email,password,user_role,gender,date_of_birth,blood_group,address,contact,image,NID,father_name,mother_name) VALUES ('$Id','$Name','$Email','$Pass','$UserRole','$Gender','$DOB','$Blood','$Address','$Contact','$Image','$NID','$FatherName','$MotherName')";
 
+    $sql2 = "INSERT INTO employee_status(department,designation,status,salary) VALUES ('$Department','$Designation','$Status','$Salary')";
+
     //$data = $dbcon->query($sql);
 
 
-    if ($dbcon->query($sql))
+    if ($dbcon->query($sql) && $dbcon->query($sql2))
     {
 
         echo("<script>location.href='dashboard.php'</script>");
@@ -130,13 +132,14 @@ if(isset($_POST['add']))
                                 <option value="Female">Female</option>
                             </select>
                         </div>
-                       <!-- <div class="form-group">
+
+                        <div class="form-group">
                             <label for="" class="sr-only"></label>
                             <input name="designation" type="text" id="" class="form-control" placeholder="Designation">
                         </div>
                         <div class="form-group">
                             <label for="" class="sr-only"></label>
-                            <select name="Department" id="" class="form-control">
+                            <select name="department" id="" class="form-control">
                                 <option value="">-- Department --</option>
                                 <option value="Marketing">Marketing</option>
                                 <option value="Accounting">Accounting</option>
@@ -151,10 +154,11 @@ if(isset($_POST['add']))
                             <label for="" class="sr-only"></label>
                             <select name="status" id="" class="form-control">
                                 <option value="">-- Status --</option>
-                                <option value="Marketing">Active</option>
-                                <option value="Accounting">Inactive</option>
+                                <option value="Active">Active</option>
+                                <option value="Inactive">Inactive</option>
                             </select>
-                        </div>-->
+                        </div>
+
                         <div class="form-group">
                             <label for="" class="sr-only"></label>
                             <img src="images/placeholder.png" alt="Profile-image" width="80px" height="80px">
@@ -184,8 +188,8 @@ if(isset($_POST['add']))
                             <label for="" class="sr-only"></label>
                             <select name="userRole" id="" class="form-control">
                                 <option value="">-- User role --</option>
-                                <option value="Marketing">Admin</option>
-                                <option value="Accounting">Employee</option>
+                                <option value="Admin">Admin</option>
+                                <option value="Employee">Employee</option>
                             </select>
                         </div>
 
