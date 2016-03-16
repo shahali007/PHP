@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 12, 2016 at 06:30 AM
+-- Generation Time: Mar 15, 2016 at 07:09 AM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 7.0.3
 
@@ -52,7 +52,8 @@ INSERT INTO `employee_details` (`e_id`, `name`, `email`, `password`, `user_role`
 ('002', 'Nasir', 'nasir@ct.com', '202cb962ac59075b964b07152d234b70', 'Admin', 'Male', '2016-03-17', 'O+', 'Narayangonj', '01515845121', 0x53637265656e73686f74202832292e706e67, 2147483647, 'Baba', 'Ma'),
 ('003', 'Burhan', 'burhan@ct.com', 'b59c67bf196a4758191e42f76670ceba', 'Employee', 'Male', '2016-03-24', 'A+', 'Narayangonj', '01720420420', 0x53637265656e73686f74202833292e706e67, 2147483647, 'Baba', 'Ma'),
 ('004', 'Sobuj', 'sobuj@ct.com', '111', 'Admin', 'Male', '2016-03-23', 'O+', 'Dhaka', '01215412541', 0x53637265656e73686f74202834292e706e67, 2147483647, 'Baba', 'Ma'),
-('005', 'Dewan', 'dewan@ct.com', '123', 'Employee', 'Male', '2016-03-17', 'ABC+', 'Dhaka', '+880 420 42', 0x53637265656e73686f74202835292e706e67, 2147483647, 'Baba', 'Ma');
+('005', 'Dewan', 'dewan@ct.com', '123', 'Employee', 'Male', '2016-03-17', 'ABC+', 'Dhaka', '+880 420 42', 0x53637265656e73686f74202835292e706e67, 2147483647, 'Baba', 'Ma'),
+('100', 'Robbani', 'robbani@st.com', '123', 'Employee', 'Male', '2016-03-16', 'O+', 'Narayangonj', '01215412541', 0x53637265656e73686f74202832292e706e67, 2147483647, 'Baba', 'MA');
 
 -- --------------------------------------------------------
 
@@ -80,7 +81,8 @@ INSERT INTO `employee_status` (`sl_no`, `e_id`, `department`, `designation`, `st
 (7, NULL, 'Marketing', 'Student', 'Active', 52222, NULL, NULL),
 (8, NULL, 'HRM', 'Bog Brother', 'Active', 84000, NULL, NULL),
 (9, NULL, 'Marketing', 'Student', 'Active', 120000, NULL, NULL),
-(10, NULL, 'HRM', 'Bhi brother', 'Active', 420000, NULL, NULL);
+(10, NULL, 'HRM', 'Bhi brother', 'Active', 420000, NULL, NULL),
+(11, NULL, 'Marketing', 'Student', 'Active', 50000, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -96,6 +98,16 @@ CREATE TABLE `working_hour` (
   `check_out_time` time DEFAULT NULL,
   `reason` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `working_hour`
+--
+
+INSERT INTO `working_hour` (`sl_no`, `e_id`, `date`, `check_in_time`, `check_out_time`, `reason`) VALUES
+(1, '004', '2016-03-15', '06:37:00', '00:00:00', ''),
+(2, '004', '2016-03-15', '06:38:00', '00:00:00', ''),
+(3, '005', '2016-03-15', '06:41:00', '06:51:00', ''),
+(4, '100', '2016-03-15', '07:09:00', '00:00:00', '');
 
 --
 -- Indexes for dumped tables
@@ -130,12 +142,12 @@ ALTER TABLE `working_hour`
 -- AUTO_INCREMENT for table `employee_status`
 --
 ALTER TABLE `employee_status`
-  MODIFY `sl_no` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `sl_no` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `working_hour`
 --
 ALTER TABLE `working_hour`
-  MODIFY `sl_no` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `sl_no` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Constraints for dumped tables
 --

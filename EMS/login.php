@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('pdo_connection.php');
 include('database_config.php');
 $db_user =$database_user;
@@ -19,19 +20,21 @@ if(isset($_POST['login']))
     $user_email = $Row['email'];
     $user_password = $Row['password'];
     $user_role = $Row['user_role'];
-	
+    $e_id = $Row['e_id'];
+
 	if($user_email !="" && $user_password !=""){
 		$_SESSION['user'] = $user_email;
 		$_SESSION['login'] = "True";
-		
+		$_SESSION['e_id'] = $e_id;
+
 		if($user_role == "Admin"){
 			echo("<script>location.href='dashboard.php'</script>");
 		}
-		
+
 		else if($user_role == "Employee"){
-			echo("<script>location.href='my-profile.php'</script>");
+			echo("<script>location.href='in-out-time.php'</script>");
 		}
-		
+
 		else{
 			echo("<script>location.href='login.php'</script>");
 		}
