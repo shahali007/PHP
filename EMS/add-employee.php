@@ -1,11 +1,22 @@
 <?php
-include('pdo_connection.php');
-include('database_config.php');
-$db_user =$database_user;
-$db_pass =$databse_pass;
-$db_name=$database_name;
-$dbcon=$connection_object->connection('localhost',$db_user,$db_pass,$db_name);
+session_start();
+//echo $_SESSION['login'];
+if($_SESSION['login'] !="True"){
+    $string = ' Sorry! You have to login first to view this page. ';
+    echo "<script>alert(\"$string\")</script>";
+    echo("<script>location.href='login.php'</script>");
 
+}
+else{
+    $e_id = $_SESSION['e_id'];
+
+    include('pdo_connection.php');
+    include('database_config.php');
+    $db_user =$database_user;
+    $db_pass =$databse_pass;
+    $db_name=$database_name;
+    $dbcon=$connection_object->connection('localhost',$db_user,$db_pass,$db_name);
+}
 if(isset($_POST['add']))
 {
     $Id = $_POST['id'];
@@ -32,7 +43,7 @@ if(isset($_POST['add']))
 
     $sql = "INSERT INTO employee_details(e_id,name,email,password,user_role,gender,date_of_birth,blood_group,address,contact,image,NID,father_name,mother_name) VALUES ('$Id','$Name','$Email','$Pass','$UserRole','$Gender','$DOB','$Blood','$Address','$Contact','$Image','$NID','$FatherName','$MotherName')";
 
-    $sql2 = "INSERT INTO employee_status(department,designation,status,salary) VALUES ('$Department','$Designation','$Status','$Salary')";
+    $sql2 = "INSERT INTO employee_status(e_id,department,designation,status,salary) VALUES ('$Id',  '$Department','$Designation','$Status','$Salary')";
 
     //$data = $dbcon->query($sql);
 
@@ -40,7 +51,7 @@ if(isset($_POST['add']))
     if ($dbcon->query($sql) && $dbcon->query($sql2))
     {
 
-        echo("<script>location.href='dashboard.php'</script>");
+        echo("<script>location.href='add-employee.php'</script>");
     }
     else {
         $string = ' Sorry! Try again.\n';
@@ -84,7 +95,7 @@ if(isset($_POST['add']))
                         <li><a href="employee-status.php">Employee Status</a></li>
                         <li><a href="leave-management.php">Leave Management</a></li>
                         <li><a href="working-hour.php">Working H.</a></li>
-                        <li><a href="login.php">Logout</a></li>
+                        <li><a href="logout.php">Logout</a></li>
                     </ul>
                 </div>
             </div>

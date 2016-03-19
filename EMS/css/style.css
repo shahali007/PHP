@@ -9,6 +9,9 @@ a:focus,
 a:active{
     text-decoration: none;
     outline: none;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
     transition: all 0.3s;
 }
 h1,
@@ -140,6 +143,9 @@ a.button-style:hover{
 #team_area{}
 .team{
     background: #f6f6f6;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
     transition: all 0.3s;
     box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2);
     margin-bottom:30px;
@@ -168,13 +174,16 @@ a.button-style:hover{
 .team-info{
     padding:90px 25px 35px;
 }
-.team-info h4 a{
+.team-info h4{
     color: #000;
     font-weight:bold;
 }
-.team-info:hover h4 a{
+.team-info:hover h4{
     color: #fff;
-    text-decoration: underline;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
 }
 .team-info h5{}
  .team-info p{}

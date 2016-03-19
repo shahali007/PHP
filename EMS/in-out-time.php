@@ -38,7 +38,7 @@ if(isset($_POST['savetime']))
         $dbcon->query($insert);
         $str="Your time has been set";
         echo "<script>alert(\"$str\")</script>";
-        echo("<script>location.href='dashboard.php'</script>");
+        echo("<script>location.href='my-profile.php'</script>");
 
     }
     elseif($TimeInOut == 'TimeOut'){
@@ -47,7 +47,7 @@ if(isset($_POST['savetime']))
         $dbcon->query($update);
         $str = "Your Information has been update.";
         echo "<script>alert(\"$str\")</script>";
-        echo("<script>location.href='dashboard.php'</script>");
+        echo("<script>location.href='logout.php'</script>");
     }
     else{
         $in = 'Sorry! You have already submit your time. ';

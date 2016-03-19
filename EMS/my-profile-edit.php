@@ -1,3 +1,47 @@
+<?php
+session_start();
+
+if ($_SESSION['login'] != "True") {
+    $string = ' Sorry! You have to login first to view this page.';
+    echo "<script>alert(\"$string\")</script>";
+    header("location:login.php");
+}
+else {
+
+    $e_id=$_SESSION['e_id'];
+    require "database_config.php";
+    require "pdo_connection.php";
+
+
+    $db_user =$database_user;
+    $db_pass =$databse_pass;
+    $db_name=$database_name;
+    $dbcon=$connection_object->connection('localhost',$db_user,$db_pass,$db_name);
+    $sql = "SELECT * FROM employee_details,employee_status WHERE employee_details.e_id='$e_id' AND employee_status.e_id='$e_id'";
+    $data = $dbcon->query($sql);
+    $RowData=$data->fetch(PDO::FETCH_ASSOC);
+
+    $UserName = $RowData['name'];
+    $UserDesignation = $RowData['designation'];
+    $UserEmail = $RowData['email'];
+    $UserAddress = $RowData['address'];
+    $UserPassword = $RowData['password'];
+}
+if(isset($_POST['update'])){
+    $updateName = $_POST['username'];
+    $updatePassword = $_POST['password'];
+    $updateAddress = $_POST['address'];
+
+    $sql = "UPDATE employee_details SET name='$updateName', password='$updatePassword', address='$updateAddress' WHERE e_id='$e_id'";
+    $dbcon->query($sql);
+
+    $updateMessage = 'Updated successfully.';
+    echo "<script>alert(\"$updateMessage\")</script>";
+    echo("<script>location.href='my-profile.php'</script>");
+}
+?>
+
+
 <!Doctype html>
 <html lang="en">
 <head>
@@ -29,8 +73,8 @@
                         <li><a href="index.php">Home</a></li>
                         <li><a href="about.php">About</a></li>
                         <li><a href="contact.php">Contact</a></li>
-                        <li class="active"><a href="my_profile.php">My profile</a></li>
-                        <li><a href="login.php">Logout</a></li>
+                        <li class="active"><a href="my-profile.php">My profile</a></li>
+                        <li><a href="logout.php">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -47,29 +91,24 @@
                         <h3 class="text-center"><i class="fa fa-pencil-square-o"></i> Edit Profile</h3>
                         <hr>
                         <div class="form-group">
-                            <label for="userImage" class="sr-only"></label>
-                            <img src="images/placeholder.png" alt="Profile-image" width="80px" height="80px">
-                            <input type="file" id="userImage" class="form-control">
-                        </div>
-                        <div class="form-group">
                             <label for="userName" class="sr-only"></label>
-                            <input type="text" id="userName" class="form-control" placeholder="Username">
+                            <input name="username" type="text" id="userName" class="form-control" value=<?php echo $UserName;?> />
                         </div>
                         <div class="form-group">
                             <label for="userEmail" class="sr-only"></label>
-                            <input type="email" id="userEmail" class="form-control" placeholder="Email" readonly>
+                            <input name="email" type="email" id="userEmail" class="form-control" placeholder="Email" value=<?php echo $UserEmail;?> disabled/>
                         </div>
                         <div class="form-group">
                             <label for="userPassword" class="sr-only"></label>
-                            <input type="password" id="userPassword" class="form-control" placeholder="Password">
+                            <input name="password" type="password" id="userPassword" class="form-control" value=<?php echo $UserPassword;?> />
                         </div>
                         <div class="form-group">
                             <label for="userAddress" class="sr-only"></label>
-                            <input type="text" id="userAddress" class="form-control" placeholder="Address">
+                            <input name="address" type="text" id="userAddress" class="form-control" value=<?php echo $UserAddress;?> />
                         </div>
                         <div class="form-group">
                             <label for="submit"></label>
-                            <button type="submit" id="submit" class="btn btn-primary">Update</button>
+                            <button name="update" type="submit" id="submit" class="btn btn-primary">Update</button>
                         </div>
                     </form>
                 </div>

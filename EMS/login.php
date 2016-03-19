@@ -28,7 +28,7 @@ if(isset($_POST['login']))
 		$_SESSION['e_id'] = $e_id;
 
 		if($user_role == "Admin"){
-			echo("<script>location.href='dashboard.php'</script>");
+			echo("<script>location.href='in-out-time.php'</script>");
 		}
 
 		else if($user_role == "Employee"){
