@@ -1,18 +1,14 @@
 <?php
 session_start();
-
 if ($_SESSION['login'] != "True") {
     $string = ' Sorry! You have to login first to view this page.';
     echo "<script>alert(\"$string\")</script>";
     header("location:login.php");
 }
 else {
-
     $e_id=$_SESSION['e_id'];
     require "database_config.php";
     require "pdo_connection.php";
-
-
     $db_user =$database_user;
     $db_pass =$databse_pass;
     $db_name=$database_name;
@@ -20,7 +16,6 @@ else {
     $sql = "SELECT * FROM employee_details,employee_status WHERE employee_details.e_id='$e_id' AND employee_status.e_id='$e_id'";
     $data = $dbcon->query($sql);
     $RowData=$data->fetch(PDO::FETCH_ASSOC);
-
     $UserName = $RowData['name'];
     $UserDesignation = $RowData['designation'];
     $UserEmail = $RowData['email'];
@@ -31,10 +26,8 @@ if(isset($_POST['update'])){
     $updateName = $_POST['username'];
     $updatePassword = $_POST['password'];
     $updateAddress = $_POST['address'];
-
     $sql = "UPDATE employee_details SET name='$updateName', password='$updatePassword', address='$updateAddress' WHERE e_id='$e_id'";
     $dbcon->query($sql);
-
     $updateMessage = 'Updated successfully.';
     echo "<script>alert(\"$updateMessage\")</script>";
     echo("<script>location.href='my-profile.php'</script>");
@@ -96,7 +89,7 @@ if(isset($_POST['update'])){
 						<div class="form-group">
 							<label for="exampleInputEmail1">Email address</label>
 							<input type="email" class="form-control" value="<?php echo $UserEmail;?>" disabled />
-
+			
 						</div>
 						<div class="form-group">
 							<label for="exampleInputAddress">Address</label>
