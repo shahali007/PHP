@@ -80,27 +80,27 @@ if(isset($_POST['update'])){
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">                 
-					<form action="" method="post">
-						<h3 class="text-center"><i class="fa fa-pencil-square-o"></i> Edit Profile</h3>
-						<div class="form-group">
-							<label for="name">Name</label>
-							<input type="text" class="form-control" name="username" value="<?php echo $UserName;?>"/>
-						</div>
-						<div class="form-group">
-							<label for="exampleInputEmail1">Email address</label>
-							<input type="email" class="form-control" value="<?php echo $UserEmail;?>" disabled />
+			<form action="" method="post">
+				<h3 class="text-center"><i class="fa fa-pencil-square-o"></i> Edit Profile</h3>
+				<div class="form-group">
+					<label for="name">Name</label>
+					<input type="text" class="form-control" name="username" value="<?php echo $UserName;?>"/>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputEmail1">Email address</label>
+					<input type="email" class="form-control" value="<?php echo $UserEmail;?>" disabled />
 
-						</div>
-						<div class="form-group">
-							<label for="exampleInputAddress">Address</label>
-							<input type="text" class="form-control" name="address" value="<?php echo $UserAddress;?>"/>
-						</div>
-						<div class="form-group">
-							<label for="exampleInputPassword">Password</label>
-							<input type="password" class="form-control" name="password" value="<?php echo $UserPassword;?>"/>
-						</div>
-						<button type="submit" name="update" class="btn btn-primary">Update</button>
-					</form>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputAddress">Address</label>
+					<input type="text" class="form-control" name="address" value="<?php echo $UserAddress;?>"/>
+				</div>
+				<div class="form-group">
+					<label for="exampleInputPassword">Password</label>
+					<input type="password" class="form-control" name="password" value="<?php echo $UserPassword;?>"/>
+				</div>
+				<button type="submit" name="update" class="btn btn-primary">Update</button>
+			</form>
                 </div>
             </div>
         </div>
