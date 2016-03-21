@@ -79,7 +79,7 @@
                                 <td>21 days</td>
                                 <td>
                                     <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#01"><i class="fa fa-eye-slash"></i></button>
-                                    <a href="my-profile-edit.html" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"></i></a>
+                                    <a href="my-profile-edit.php" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"></i></a>
                                 </td>
                             </tr>
                         </table>
