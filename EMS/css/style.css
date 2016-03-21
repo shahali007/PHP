@@ -178,6 +178,7 @@ a.button-style:hover{
     color: #000;
     font-weight:bold;
 }
+.team:hover h4,
 .team-info:hover h4{
     color: #fff;
     -webkit-transition: all 0.3s;

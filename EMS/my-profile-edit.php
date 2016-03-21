@@ -1,18 +1,14 @@
 <?php
 session_start();
-
 if ($_SESSION['login'] != "True") {
     $string = ' Sorry! You have to login first to view this page.';
     echo "<script>alert(\"$string\")</script>";
     header("location:login.php");
 }
 else {
-
     $e_id=$_SESSION['e_id'];
     require "database_config.php";
     require "pdo_connection.php";
-
-
     $db_user =$database_user;
     $db_pass =$databse_pass;
     $db_name=$database_name;
@@ -20,7 +16,6 @@ else {
     $sql = "SELECT * FROM employee_details,employee_status WHERE employee_details.e_id='$e_id' AND employee_status.e_id='$e_id'";
     $data = $dbcon->query($sql);
     $RowData=$data->fetch(PDO::FETCH_ASSOC);
-
     $UserName = $RowData['name'];
     $UserDesignation = $RowData['designation'];
     $UserEmail = $RowData['email'];
@@ -31,10 +26,8 @@ if(isset($_POST['update'])){
     $updateName = $_POST['username'];
     $updatePassword = $_POST['password'];
     $updateAddress = $_POST['address'];
-
     $sql = "UPDATE employee_details SET name='$updateName', password='$updatePassword', address='$updateAddress' WHERE e_id='$e_id'";
     $dbcon->query($sql);
-
     $updateMessage = 'Updated successfully.';
     echo "<script>alert(\"$updateMessage\")</script>";
     echo("<script>location.href='my-profile.php'</script>");
@@ -86,31 +79,28 @@ if(isset($_POST['update'])){
     <section id="my_profile_edit">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                    <form action="" method="post">
-                        <h3 class="text-center"><i class="fa fa-pencil-square-o"></i> Edit Profile</h3>
-                        <hr>
-                        <div class="form-group">
-                            <label for="userName" class="sr-only"></label>
-                            <input name="username" type="text" id="userName" class="form-control" value=<?php echo $UserName;?> />
-                        </div>
-                        <div class="form-group">
-                            <label for="userEmail" class="sr-only"></label>
-                            <input name="email" type="email" id="userEmail" class="form-control" placeholder="Email" value=<?php echo $UserEmail;?> disabled/>
-                        </div>
-                        <div class="form-group">
-                            <label for="userPassword" class="sr-only"></label>
-                            <input name="password" type="password" id="userPassword" class="form-control" value=<?php echo $UserPassword;?> />
-                        </div>
-                        <div class="form-group">
-                            <label for="userAddress" class="sr-only"></label>
-                            <input name="address" type="text" id="userAddress" class="form-control" value=<?php echo $UserAddress;?> />
-                        </div>
-                        <div class="form-group">
-                            <label for="submit"></label>
-                            <button name="update" type="submit" id="submit" class="btn btn-primary">Update</button>
-                        </div>
-                    </form>
+                <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">                 
+					<form action="" method="post">
+						<h3 class="text-center"><i class="fa fa-pencil-square-o"></i> Edit Profile</h3>
+						<div class="form-group">
+							<label for="name">Name</label>
+							<input type="text" class="form-control" name="username" value="<?php echo $UserName;?>"/>
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail1">Email address</label>
+							<input type="email" class="form-control" value="<?php echo $UserEmail;?>" disabled />
+
+						</div>
+						<div class="form-group">
+							<label for="exampleInputAddress">Address</label>
+							<input type="text" class="form-control" name="address" value="<?php echo $UserAddress;?>"/>
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPassword">Password</label>
+							<input type="password" class="form-control" name="password" value="<?php echo $UserPassword;?>"/>
+						</div>
+						<button type="submit" name="update" class="btn btn-primary">Update</button>
+					</form>
                 </div>
             </div>
         </div>

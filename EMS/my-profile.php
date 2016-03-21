@@ -17,7 +17,7 @@ if($_SESSION['login'] !="True"){
 else{
     $e_id = $_SESSION['e_id'];
 //    echo $e_id;
-    $Sql = "SELECT * FROM employee_details,employee_status WHERE employee_details.e_id = '$e_id' AND employee_status.e_id = '$e_id'";
+    $Sql = "SELECT * FROM employee_details,employee_status,working_hour WHERE employee_details.e_id = '$e_id' AND employee_status.e_id = '$e_id' AND working_hour.e_id = '$e_id' ";
 
     $Sqldata = $dbcon->query($Sql);
     $RowData = $Sqldata->fetch(PDO::FETCH_ASSOC);
@@ -30,9 +30,8 @@ else{
     $UserEmail = $RowData['email'];
     $UserAddress = $RowData['address'];
     $UserRole = $RowData['user_role'];
+    $UserInTime = $RowData['check_in_time'];
 }
-
-
 
 
 ?>
@@ -139,8 +138,41 @@ else{
     </footer>
     <!--End footer_area-->
 
+    
+	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Hello <b><?php echo $UserName; ?></b></h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-6 text-center">
+						<div class="team">
+							<div class="img"><img src="images/placeholder.png" alt="Team"></div>
+							<div class="team-info">
+								
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6">
+						<p> Thank you for coming office</p><br>
+						<p>Your enter time is: <b><?php echo $UserInTime; ?></b></p>
+						<p>Please Press the <a href="logout.php"><b>Logout</b></a> to exit from the system..</p><br>
+						<b class="text-muted">Have a good day.!!</b>
+					</div>
+				</div>
+			</div>
+		  </div>
+	  </div>
+	</div>
+
     <script src="js/jquery-2.1.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/custom.js"></script>
+	<script type="text/javascript">
+		$(window).load(function(){$('.bs-example-modal-sm').modal('show');setTimeout(function(){$('.bs-example-modal-sm').modal('hide');}, 5000);});
+	</script>
 </body>
 </html>
