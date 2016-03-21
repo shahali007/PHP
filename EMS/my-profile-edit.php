@@ -89,11 +89,7 @@ if(isset($_POST['update'])){
 						<div class="form-group">
 							<label for="exampleInputEmail1">Email address</label>
 							<input type="email" class="form-control" value="<?php echo $UserEmail;?>" disabled />
-<<<<<<< HEAD
 
-=======
-			
->>>>>>> origin/master
 						</div>
 						<div class="form-group">
 							<label for="exampleInputAddress">Address</label>
