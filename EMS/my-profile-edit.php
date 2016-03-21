@@ -86,31 +86,28 @@ if(isset($_POST['update'])){
     <section id="my_profile_edit">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-                    <form action="" method="post">
-                        <h3 class="text-center"><i class="fa fa-pencil-square-o"></i> Edit Profile</h3>
-                        <hr>
-                        <div class="form-group">
-                            <label for="userName" class="sr-only"></label>
-                            <input name="username" type="text" id="userName" class="form-control" value=<?php echo $UserName;?> />
-                        </div>
-                        <div class="form-group">
-                            <label for="userEmail" class="sr-only"></label>
-                            <input name="email" type="email" id="userEmail" class="form-control" placeholder="Email" value=<?php echo $UserEmail;?> disabled/>
-                        </div>
-                        <div class="form-group">
-                            <label for="userPassword" class="sr-only"></label>
-                            <input name="password" type="password" id="userPassword" class="form-control" value=<?php echo $UserPassword;?> />
-                        </div>
-                        <div class="form-group">
-                            <label for="userAddress" class="sr-only"></label>
-                            <input name="address" type="text" id="userAddress" class="form-control" value=<?php echo $UserAddress;?> />
-                        </div>
-                        <div class="form-group">
-                            <label for="submit"></label>
-                            <button name="update" type="submit" id="submit" class="btn btn-primary">Update</button>
-                        </div>
-                    </form>
+                <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">                 
+					<form action="" method="post">
+						<h3 class="text-center"><i class="fa fa-pencil-square-o"></i> Edit Profile</h3>
+						<div class="form-group">
+							<label for="name">Name</label>
+							<input type="text" class="form-control" name="username" value="<?php echo $UserName;?>"/>
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail1">Email address</label>
+							<input type="email" class="form-control" value="<?php echo $UserEmail;?>" disabled />
+
+						</div>
+						<div class="form-group">
+							<label for="exampleInputAddress">Address</label>
+							<input type="text" class="form-control" name="address" value="<?php echo $UserAddress;?>"/>
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPassword">Password</label>
+							<input type="password" class="form-control" name="password" value="<?php echo $UserPassword;?>"/>
+						</div>
+						<button type="submit" name="update" class="btn btn-primary">Update</button>
+					</form>
                 </div>
             </div>
         </div>
