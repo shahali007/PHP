@@ -1,3 +1,55 @@
+<?php
+session_start();
+include('pdo_connection.php');
+include('database_config.php');
+$db_user =$database_user;
+$db_pass =$databse_pass;
+$db_name=$database_name;
+$dbcon=$connection_object->connection('localhost',$db_user,$db_pass,$db_name);
+
+if($_SESSION['login'] !="True"){
+    $string = ' Sorry! You have to login first to view this page. ';
+    echo "<script>alert(\"$string\")</script>";
+    echo("<script>location.href='login.php'</script>");
+}
+else{
+//    $e_id = $_SESSION['e_id'];
+    if($_SESSION['user_role'] !='Admin')
+    {
+        echo("<script>location.href='my-profile.php'</script>");
+    }
+
+    else
+    {
+        if(isset($_POST['dept_search']))
+        {
+
+            $departmets=$_POST['selectDept'];
+
+            if( $departmets == 'All'){
+                $filtering="SELECT * FROM employee_status";
+                $store=$dbcon->query($filtering);
+                $data=$store->fetchAll(PDO::FETCH_ASSOC);
+            }
+            else{
+                $filtering="SELECT * FROM employee_status WHERE Department='$departmets'";
+                $store=$dbcon->query($filtering);
+                $data=$store->fetchAll(PDO::FETCH_ASSOC);
+            }
+        }
+        else
+        {
+
+
+            $filtering="SELECT * FROM employee_status";
+            $store=$dbcon->query($filtering);
+            $data=$store->fetchAll(PDO::FETCH_ASSOC);
+        }
+    }
+}
+
+?>
+
 <!Doctype html>
 <html lang="en">
 <head>
@@ -48,14 +100,14 @@
                     <form action="" method="post">
                         <div class="input-group">
                             <label for="EmpDepSearch" class="sr-only"></label>
-                            <select name="" id="EmpDepSearch" class="form-control">
-                                <option value="">-- Department --</option>
+                            <select name="selectDept" id="EmpDepSearch" class="form-control">
+                                <option value="All">--All Department --</option>
                                 <option value="Marketing">Marketing</option>
                                 <option value="Accounting">Accounting</option>
                                 <option value="HRM">HRM</option>
                             </select>
                             <span class="input-group-btn">
-                                <button class="btn btn-info" type="submit">Search</button>
+                                <button name="dept_search" class="btn btn-info" type="submit">Search</button>
                             </span>
                         </div><!-- /input-group -->
                     </form>
@@ -73,17 +125,19 @@
                                 <th style="text-align: center; width: auto;">Status</th>
                                 <th style="text-align: center; width: 120px;">Action</th>
                             </tr>
-                            <tr>
-                                <td>01</td>
-                                <td>00001</td>
-                                <td>Marketing</td>
-                                <td>SR</td>
-                                <td>Active</td>
-                                <td>
-                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#01"><i class="fa fa-eye-slash"></i></button>
-                                    <a href="my-profile-edit.html" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"></i></a>
-                                </td>
-                            </tr>
+                            <?php foreach($data as $row){?>
+                                <tr>
+                                    <td><?php echo $row['sl_no'];?></td>
+                                    <td><?php echo $row['e_id'];?></td>
+                                    <td><?php echo $row['department'];?></td>
+                                    <td><?php echo $row['designation'];?></td>
+                                    <td><?php echo $row['status'];?></td>
+                                    <td>
+                                        <a href="view.php?id=$row['e_id']"  class="btn btn-info btn-sm" ><i class="fa fa-eye-slash"></i></a>
+                                        <a href="#" class="btn btn-success btn-sm"><i class="fa fa-pencil-square-o"></i></a>
+                                    </td>
+                                </tr>
+                            <?php }?>
                         </table>
                     </div>
                 </div>

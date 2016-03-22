@@ -78,6 +78,7 @@ else{
 
                             elseif($UserRole == "Employee"){
                                 echo '
+                                    <li><a href="in-out-time.php">Time In/Out</a></li>
                                     <li><a href="index.php">Home</a></li>
                                     <li><a href="about.php">About</a></li>
                                     <li><a href="contact.php">Contact</a></li>

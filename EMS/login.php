@@ -26,6 +26,7 @@ if(isset($_POST['login']))
 		$_SESSION['user'] = $user_email;
 		$_SESSION['login'] = "True";
 		$_SESSION['e_id'] = $e_id;
+		$_SESSION['user_role'] = $user_role;
 
 		if($user_role == "Admin"){
 			echo("<script>location.href='in-out-time.php'</script>");
